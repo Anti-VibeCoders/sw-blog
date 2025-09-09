@@ -1,0 +1,137 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+const { author, publicationDate, readingMinutes, authorImage } = frontmatter;
+---
+
+<BaseLayout>
+    <div class="post-layout-container w-full flex justify-center items-center h-full">
+        <div class="post-layout-content w-full max-w-4xl mx-auto h-full flex flex-col gap-4 p-4 md:p-8">
+            <div class="post-author-info flex justify-between items-center">
+                <div class="author-info flex items-center gap-4">
+                    <div class="author-pfp size-14 rounded-full overflow-hidden max-sm:size-12">
+                        <img 
+                            src={authorImage || '/placeholder.png'} 
+                            alt={author} 
+                            title={author} 
+                            class="w-full h-full object-cover select-none" 
+                            draggable="false"
+                        />
+                    </div>
+                    <div class="author-name">
+                        <span class="font-semibold text-lg max-sm:text-base">{author}</span>
+                    </div>
+                </div>
+                <div class="publication-date">
+                    <span class="text-[#282828] text-sm">{publicationDate}</span>
+                </div>
+            </div>
+            <div class="reading-minutes">
+                <span class="text-[#4F5049]">{readingMinutes} minutos de lectura</span>
+            </div>
+            <div class="post-content">
+                <slot />
+            </div>
+        </div>
+    </div>
+</BaseLayout>
+
+<style is:global>
+    .post-content {
+        color: var(--color-text);
+        line-height: 1.7;
+    }
+
+    .post-content h1,
+    .post-content h2,
+    .post-content h3,
+    .post-content h4,
+    .post-content h5,
+    .post-content h6 {
+        color: var(--color-heading);
+        font-weight: 700;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        line-height: 1.3;
+    }
+
+    .post-content h1 {
+        font-size: 2.25rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.6rem;
+        border-bottom: 1px solid var(--color-quote-border);
+        padding-bottom: 0.3em;
+    }
+
+    .post-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .post-content p {
+        margin-bottom: 1.25em;
+        font-size: 18px;
+    }
+
+    .post-content img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 0.5rem;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .post-content strong {
+        font-weight: 700;
+        color: var(--color-heading);
+    }
+
+    .post-content em {
+        font-style: italic;
+    }
+
+    .post-content blockquote {
+        margin: 1.5em 0;
+        padding: 0.5em 1em;
+        border-left: 4px solid var(--color-primary);
+        background-color: var(--color-quote-bg);
+        color: var(--color-quote-text);
+        font-style: italic;
+    }
+
+    .post-content :not(pre) > code {
+        background-color: var(--color-code-bg);
+        color: var(--color-code-text);
+        padding: 0.2em 0.4em;
+        border-radius: 0.25rem;
+        font-family: monospace;
+        font-size: 0.9em;
+    }
+
+    .post-content ul, .post-content ol {
+        padding-left: 1.5em;
+        margin-bottom: 1.25em;
+    }
+
+    .post-content ul {
+        list-style-type: disc;
+    }
+
+    .post-content ol {
+        list-style-type: decimal;
+    }
+
+    .post-content li {
+        margin-bottom: 0.5em;
+    }
+
+    .post-content li::marker {
+        color: var(--color-primary);
+        font-weight: 600;
+    }
+</style>
