@@ -1,2 +1,16 @@
 ---
+import { Code } from '@lucide/astro'
+import GradientDef from './GradientDef.astro';
 ---
+
+<header class="w-full h-12 flex justify-between items-center max-lg:px-1">
+    <div class="header-left flex gap-2 items-center">
+        <GradientDef />
+        <Code class="w-8 h-8" stroke="url(#icon-gradient)" />
+        <span class="bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] bg-clip-text text-transparent text-3xl font-semibold">SW</span>
+    </div>
+    <div class="header-right flex gap-4 items-center justify-center">
+        <button class="bg-transparent bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] bg-clip-text text-transparent cursor-pointer font-semibold">Inicio</button>
+        <button class="text-white bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] rounded-full py-2 px-4 cursor-pointer active:text-neutral-100 transition duration-100">Contacto</button>
+    </div>
+</header>
