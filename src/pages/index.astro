@@ -1,7 +1,66 @@
 ---
 import BaseLayout from "../layout/BaseLayout.astro";
+
+// Temporal data
+const array = [
+	{
+		title: "The Rise of Magical Realism and Its Influence on Contemporary Fiction",
+		author: "Patricia Miles",
+		date: "Jan 12, 2025",
+		description: "Exploring how magical realism reshaped storytelling, blending fantasy with the ordinary.",
+		img: "/adam.png"
+	},
+	{
+		title: "The Rise of Magical Realism and Its Influence on Contemporary Fiction",
+		author: "Patricia Miles",
+		date: "Jan 12, 2025",
+		description: "Exploring how magical realism reshaped storytelling, blending fantasy with the ordinary.",
+		img: "/adam.png"
+	},
+]
+
 ---
 
 <BaseLayout>
-	<h1>Syntax World Blog</h1>
+	<section>
+		<div class="flex flex-col gap-3 items-center justify-center p-12">
+			<img src="https://framerusercontent.com/images/f77cWhM3X8SCQvBAx5f0JQ8CLQ.png" class="size-40" alt="">
+			<span class="font-semibold">Thoughts, stories and ideas</span>
+		</div>
+	</section>
+	<section>
+		<span class="font-semibold mb-8">Featured Article</span>
+		<div class="flex flex-col md:flex-row gap-6 items-center">
+			<img src="/adam.png" class="size-[90%] md:size-[50%] rounded-lg">
+			<div class="flex flex-col gap-3 w-[90%] md:w-full">
+				<h3 class="text-lg font-semibold">The Continuing Legacy of Sword & Sorcery: What's Next for the Genre?</h3>
+				<div class="flex items-center gap-2">
+					<img src="/placeholder.png" class="size-5" alt="">
+					<span>Celestia Lily</span>
+					<span>Sep 17, 2024</span>
+				</div>
+				<p>Explore the enduring legacy of Sword & Sorcery and how the genre is evolving, bringing classic tropes into new and exciting realms.</p>
+			</div>	
+		</div>
+	</section>
+	<hr class="my-12">
+	<section>
+		<div class="flex flex-col gap-6">
+			<span class="font-semibold">Latest Articles</span>
+			{array.map((a)=>(
+			<div class="flex flex-col md:flex-row gap-6 items-center">
+				<img src={a.img} class="size-[90%] md:size-[50%] rounded-lg">
+			<div class="flex flex-col gap-3 w-[90%] md:w-full">
+				<h3 class="text-lg font-semibold">{a.title}</h3>
+				<div class="flex items-center gap-2">
+					<img src="/placeholder.png" class="size-5" alt="">
+					<span>{a.author}</span>
+					<span>{a.date}</span>
+				</div>
+					<p>{a.description}</p>
+				</div>
+			</div>
+		))}
+		</div>
+	</section>
 </BaseLayout>
