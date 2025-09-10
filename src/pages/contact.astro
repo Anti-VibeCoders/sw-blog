@@ -1,0 +1,56 @@
+---
+import "../styles/index.css";
+
+---
+  <div class="bg-white text-black min-h-screen font-sans">
+    <section class="flex flex-col items-center justify-center p-4 pt-16 md:pt-32 text-center">
+      <div class="w-20 h-20 sm:w-30 sm:h-30 bg-gray-700 rounded-full flex items-center justify-center mb-6">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjoLiplsavpw3qNm3D_ASYzHLDHGushZKwYA&s" alt="Contact Icon" class="w-full h-full rounded-full object-cover" />
+      </div>
+      <h1 class="text-4xl sm:text-2xl font-semibold text-black">Contact</h1>
+      <div style="width: 100%; height: 100%; overflow: hidden; background-color: rgba(250, 250, 250, 0); transform: translateZ(0px); border-radius: 0px; position: relative;">
+
+      </div>
+    </section>
+
+    <section class="flex flex-col items-center p-4">
+      <div>
+        <div class="text-left max-w-xl mx-auto mb-8">
+          <h3 class="text-3xl font-bold mb-2">Let's Talk</h3>
+          <p class="text-black-400">If you require assistance or have any inquiries, please do not hesitate to reach out to us. Your questions are important to us, and our team is ready to assist you in any way possible.</p>
+          <div class="flex gap-4 mt-6">
+            <a href="#"><img src="https://www.svgrepo.com/show/521688/github.svg" alt="GitHub" class="w-7 h-7 opacity-70 hover:opacity-100 transition-opacity" /></a>
+            <a href="#"><img src="https://www.svgrepo.com/show/501613/linkedin.svg" alt="LinkedIn" class="w-7 h-7 opacity-70 hover:opacity-100 transition-opacity" /></a>
+            <a href="#"><img src="https://www.svgrepo.com/show/509105/facebook.svg" alt="Facebook" class="w-7 h-7 opacity-70 hover:opacity-100 transition-opacity" /></a>
+          </div>
+        </div>
+        
+        <div class="w-full  border border-gray-500"></div>
+
+        <div class="bg-gray-200 rounded-2xl p-6 sm:p-10 w-full max-w-2xl shadow-lg mt-8">
+          <form action="https://formspree.io/f/mpwjbdvk" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col">
+              <label for="name" class="text-sm font-medium text-black mb-2">Name</label>
+              <input type="text" id="name" name="name" placeholder="e.g. John" required class="bg-transparent border border-gray-700 text-black p-3 rounded-lg text-base outline-none focus:border-purple-600 transition-colors" />
+            </div>
+            <div class="flex flex-col">
+              <label for="email" class="text-sm font-medium text-black mb-2">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@framer.com" required class="bg-transparent border border-gray-700 text-black p-3 rounded-lg text-base outline-none focus:border-purple-600 transition-colors" />
+            </div>
+            <div class="col-span-1 md:col-span-2 flex flex-col">
+              <label for="subject" class="text-sm font-medium text-black mb-2">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Subject" required class="bg-transparent border border-gray-700 text-black p-3 rounded-lg text-base outline-none focus:border-purple-600 transition-colors" />
+            </div>
+            <div class="col-span-1 md:col-span-2 flex flex-col">
+              <label for="message" class="text-sm font-medium text-black mb-2">Your Message</label>
+              <textarea id="message" name="message" placeholder="Your Message" required class="bg-transparent border border-gray-700 text-black p-3 rounded-lg text-base outline-none min-h-[120px] resize-y focus:border-purple-600 transition-colors"></textarea>
+            </div>
+            <button type="submit" class="col-span-1 md:col-span-2 bg-purple-600 text-black font-bold py-3 rounded-lg cursor-pointer hover:bg-purple-700 transition-colors">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="w-full  border border-gray-500"></div>
+    </section>
+
+  </div>
+</BaseLayout>
