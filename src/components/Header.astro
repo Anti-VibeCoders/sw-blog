@@ -7,10 +7,14 @@ import GradientDef from './GradientDef.astro';
     <div class="header-left flex gap-2 items-center">
         <GradientDef />
         <Code class="w-8 h-8" stroke="url(#icon-gradient)" />
-        <span class="bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] bg-clip-text text-transparent text-3xl font-semibold">SW</span>
+        <span class="bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] bg-clip-text text-transparent text-3xl font-semibold select-none">SW</span>
     </div>
     <div class="header-right flex gap-4 items-center justify-center">
-        <button class="bg-transparent bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] bg-clip-text text-transparent cursor-pointer font-semibold">Inicio</button>
-        <button class="text-white bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] rounded-full py-2 px-4 cursor-pointer active:text-neutral-100 transition duration-100">Contacto</button>
+        <a href="/">
+            <button class="bg-transparent bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] bg-clip-text text-transparent cursor-pointer font-semibold select-none">Inicio</button>
+        </a>
+        <a href="/contact">
+            <button class="text-white bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] rounded-full py-2 px-4 cursor-pointer active:text-neutral-100 transition duration-100 select-none">Contacto</button>
+        </a>
     </div>
 </header>
