@@ -1,4 +1,5 @@
 ---
+import PostCard from "../components/PostCard.astro";
 import BaseLayout from "../layout/BaseLayout.astro";
 
 // Temporal data
@@ -19,48 +20,38 @@ const array = [
 	},
 ]
 
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }))
+
+allPosts.sort((a: any, b: any) => new Date(b.frontmatter.publicationDate).getTime() - new Date(a.frontmatter.publicationDate).getTime());
+
+console.log(allPosts)
+
+const latestPost: any = allPosts[0]
+
 ---
 
 <BaseLayout>
-	<section>
-		<div class="flex flex-col gap-3 items-center justify-center p-12">
-			<img src="https://framerusercontent.com/images/f77cWhM3X8SCQvBAx5f0JQ8CLQ.png" class="size-40" alt="">
-			<span class="font-semibold">Thoughts, stories and ideas</span>
-		</div>
-	</section>
-	<section>
-		<span class="font-semibold mb-8">Featured Article</span>
-		<div class="flex flex-col md:flex-row gap-6 items-center">
-			<img src="/adam.png" class="size-[90%] md:size-[50%] rounded-lg">
-			<div class="flex flex-col gap-3 w-[90%] md:w-full">
-				<h3 class="text-lg font-semibold">The Continuing Legacy of Sword & Sorcery: What's Next for the Genre?</h3>
-				<div class="flex items-center gap-2">
-					<img src="/placeholder.png" class="size-5" alt="">
-					<span>Celestia Lily</span>
-					<span>Sep 17, 2024</span>
-				</div>
-				<p>Explore the enduring legacy of Sword & Sorcery and how the genre is evolving, bringing classic tropes into new and exciting realms.</p>
-			</div>	
-		</div>
-	</section>
-	<hr class="my-12">
-	<section>
-		<div class="flex flex-col gap-6">
-			<span class="font-semibold">Latest Articles</span>
-			{array.map((a)=>(
-			<div class="flex flex-col md:flex-row gap-6 items-center">
-				<img src={a.img} class="size-[90%] md:size-[50%] rounded-lg">
-			<div class="flex flex-col gap-3 w-[90%] md:w-full">
-				<h3 class="text-lg font-semibold">{a.title}</h3>
-				<div class="flex items-center gap-2">
-					<img src="/placeholder.png" class="size-5" alt="">
-					<span>{a.author}</span>
-					<span>{a.date}</span>
-				</div>
-					<p>{a.description}</p>
-				</div>
+	<section class="mb-12 flex flex-col gap-12">
+		<article>
+			<div class="flex flex-col gap-3 items-center justify-center p-12">
+				<img src="https://framerusercontent.com/images/f77cWhM3X8SCQvBAx5f0JQ8CLQ.png" class="size-40" alt="">
+				<span class="font-semibold dark:text-[#f9fafb]">Thoughts, stories and ideas</span>
 			</div>
-		))}
-		</div>
+		</article>
+		<article class="flex flex-col">
+			<span class="font-semibold mb-5">Featured Article</span>
+			<div class="grid grid-cols-1 grid-rows-1 w-full">
+				<PostCard postUrl={latestPost.url} postImage={latestPost.frontmatter.imagePreview} postTitle={latestPost.frontmatter.title} postAuthor={latestPost.frontmatter.author} postAuthorImage={latestPost.frontmatter.authorImage} postDate={latestPost.frontmatter.publicationDate} postDescription={latestPost.frontmatter.description} />
+			</div>
+		</article>
+		<hr class="border-neutral-300 dark:border-neutral-800"/>
+		<article>
+			<span class="font-semibold">Latest Articles</span>
+			<div class="grid grid-cols-1 items-center w-full gap-6 mt-6">
+				{allPosts.map((post: any) => (
+					<PostCard postUrl={post.url} postImage={post.frontmatter.imagePreview} postTitle={post.frontmatter.title} postAuthor={post.frontmatter.author} postAuthorImage={post.frontmatter.authorImage} postDate={post.frontmatter.publicationDate} postDescription={post.frontmatter.description} />
+				))}
+			</div>
+		</article>
 	</section>
 </BaseLayout>

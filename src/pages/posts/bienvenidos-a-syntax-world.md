@@ -1,10 +1,12 @@
 ---
 layout: ../../layout/PostsLayout.astro
 title: '¡Bienvenidos a Syntax World!'
+description: '¡Estamos increíblemente emocionados de lanzar nuestro blog! Si has llegado hasta aquí, es porque compartes nuestra misma pasión por el desarrollo de software, la tecnología y el crecimiento profesional constante.'
 author: 'Isaac Alvarez'
 publicationDate: 'Jul 16, 2025'
 readingMinutes: 3
 authorImage: '/placeholder.png'
+imagePreview: 'https://framerusercontent.com/images/qYr64JnjRXljHNTR6xYPliPbXS4.png?scale-down-to=520'
 ---
 
 # ¡Bienvenidos a Syntax World!
