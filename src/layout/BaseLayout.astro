@@ -13,15 +13,11 @@ import '../styles/index.css'
 </head>
 <body class="font-inter flex justify-center items-center dark:bg-black dark:text-[#d1d5db]">
     <main class="min-h-dvh flex flex-col w-4xl">
-        <div class="header-container">
-            <Header />
-        </div>
+        <Header />
         <section class="main-content flex-1 max-lg:px-1">
             <slot />
         </section>
-        <div class="footer-container">
-            <Footer />
-        </div>
+        <Footer />
     </main>
 </body>
 </html>
