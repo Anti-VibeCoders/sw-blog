@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --font-inter: 'Inter', system-ui;
 }
@@ -17,20 +19,14 @@
     --color-quote-text: #4b5563;
 }
 
-/*
-    ! COLORES PARA EL MODO OSCURO
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-text: #d1d5db;
-        --color-heading: #f9fafb;
-        --color-primary: #818cf8;
-        --color-background: #111827;
-        --color-code-bg: #1f2937;
-        --color-code-text: #e5e7eb;
-        --color-quote-border: #374151;
-        --color-quote-bg: #1f2937;
-        --color-quote-text: #9ca3af;
-    }
+.dark {
+    --color-text: #d1d5db;
+    --color-heading: #f9fafb;
+    --color-primary: #818cf8;
+    --color-background: #111827;
+    --color-code-bg: #1f2937;
+    --color-code-text: #e5e7eb;
+    --color-quote-border: #374151;
+    --color-quote-bg: #1f2937;
+    --color-quote-text: #9ca3af;
 }
-*/
