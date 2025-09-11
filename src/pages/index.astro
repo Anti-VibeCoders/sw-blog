@@ -24,8 +24,6 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 
 allPosts.sort((a: any, b: any) => new Date(b.frontmatter.publicationDate).getTime() - new Date(a.frontmatter.publicationDate).getTime());
 
-console.log(allPosts)
-
 const latestPost: any = allPosts[0]
 
 ---
