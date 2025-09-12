@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="670"><svg id="SvgjsSvg1023" viewBox="0 0 500 670" xmlns="http://www.w3.org/2000/svg">
+  <desc>Source: openclipart.org/detail/209545</desc>
+  <defs>
+    <linearGradient id="SvgjsLinearGradient1022">
+      <stop offset="0" style="stop-color: #12c2e9;"></stop>
+      <stop offset="0.04" style="stop-color: rgb(173, 70, 255);"></stop>
+      <stop offset="1" style="stop-color: rgb(0, 184, 219);"></stop>
+    </linearGradient>
+    <linearGradient id="SvgjsLinearGradient1021" href="#gradient-1" gradientUnits="userSpaceOnUse" x1="68.572" y1="0" x2="68.572" y2="137.144"></linearGradient>
+  </defs>
+  <g id="SvgjsG1020" style="" transform="matrix(3.567954, 0, 0, 3.484443, -459.473267, -421.806946)">
+    <desc>Source: openclipart.org/detail/209545</desc>
+    <g transform="matrix(1, 0, 0, 1, 130.423691, 149.034805)">
+      <g>
+        <path d="m27.371,85.679l10.287,10.268 20.574-20.535-10.287-10.269-20.574,20.536zm82.344-85.679h-82.286c-15.149,0-27.429,12.28-27.429,27.429v82.286c0,15.149 12.28,27.429 27.429,27.429h82.286c15.149,0 27.429-12.28 27.429-27.429v-82.286c0-15.149-12.28-27.429-27.429-27.429zm13.715,102.858c0,11.361-9.21,20.572-20.571,20.572h-68.573c-11.362,0-20.572-9.21-20.572-20.572v-68.572c0-11.362 9.21-20.572 20.572-20.572h68.572c11.361,0 20.571,9.21 20.571,20.572v68.572zm-48-6.857h34.286v-13.715h-34.286v13.715zm-48.058-51.394l20.573,20.536 10.287,10.269 10.286-10.269-30.86-30.804-10.286,10.268z" style="fill: url(&quot;#gradient-1-0&quot;);"></path>
+      </g>
+    </g>
+  </g>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
