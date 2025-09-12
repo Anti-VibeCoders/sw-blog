@@ -1,20 +1,63 @@
 ---
 import { Code } from '@lucide/astro'
 import GradientDef from './GradientDef.astro';
+import Moon from '@icons/moon.svg'
+import Sun from '@icons/sun.svg'
 ---
 
-<header class="w-full h-12 flex justify-between items-center max-lg:px-1">
+<header class="header-container w-full h-12 flex justify-between items-center px-4 pt-6 md:px-8">
     <div class="header-left flex gap-2 items-center">
         <GradientDef />
         <Code class="w-8 h-8" stroke="url(#icon-gradient)" />
-        <span class="bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] bg-clip-text text-transparent text-3xl font-semibold select-none">SW</span>
+        <span class="bg-gradient-to-b from-[#AD46FF] to-[#00B8DB] bg-clip-text text-transparent text-3xl font-semibold select-none">SW</span>
     </div>
     <div class="header-right flex gap-4 items-center justify-center">
+        <button class="cursor-pointer flex justify-center items-center" id="theme-toggle" aria-label="Toggles the color theme">
+            <Moon class="w-6 h-6 sun-icon hidden" />
+            <Sun class="w-8 h-8 moon-icon hidden pl-1" />
+        </button>
         <a href="/">
-            <button class="bg-transparent bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] bg-clip-text text-transparent cursor-pointer font-semibold select-none">Inicio</button>
+            <button class="bg-transparent bg-gradient-to-b from-[#AD46FF] to-[#00B8DB] bg-clip-text text-transparent cursor-pointer font-semibold select-none">Inicio</button>
         </a>
         <a href="/contact">
-            <button class="text-white bg-gradient-to-t from-[#AD46FF] to-[#00B8DB] rounded-full py-2 px-4 cursor-pointer active:text-neutral-100 transition duration-100 select-none">Contacto</button>
+            <button class="text-white bg-gradient-to-b from-[#AD46FF] to-[#00B8DB] rounded-full py-2 px-4 cursor-pointer active:text-neutral-100 transition duration-100 select-none">Contacto</button>
         </a>
     </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
+
+        const isDark = () => {
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme) {
+                return storedTheme === 'dark';
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches;
+        };
+
+        const setTheme = (isDarkMode: boolean) => {
+            if (isDarkMode) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+                sunIcon?.classList.add('hidden');
+                moonIcon?.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.body.classList.remove('dark');
+                sunIcon?.classList.remove('hidden');
+                moonIcon?.classList.add('hidden');
+            }
+        };
+
+        setTheme(isDark());
+
+        themeToggle?.addEventListener('click', () => {
+            const currentTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+            localStorage.setItem('theme', currentTheme);
+            setTheme(currentTheme === 'dark');
+        });
+    </script>
 </header>

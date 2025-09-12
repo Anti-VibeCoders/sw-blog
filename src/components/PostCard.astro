@@ -1,0 +1,36 @@
+---
+const { postUrl, postImage, postTitle, postAuthor, postAuthorImage, postDate, postDescription } = Astro.props
+---
+
+    <div class="post-card flex w-max justify-center gap-6 items-center *:w-1/2 max-w-4xl h-full">
+        <div class="post-card-left max-w-1/2">
+            <a href={postUrl}>
+                <div class="post-image w-full">
+                    <img src={postImage} alt={postTitle} loading="lazy" class="w-full h-full object-cover rounded-md select-none" draggable="false" />
+                </div>
+            </a>
+        </div>
+        <div class="post-card-right w-full h-full">
+            <div class="post-card-right-info h-full w-full flex flex-col justify-center gap-6 items-start">
+                <a href={postUrl}>
+                    <h3 class="text-[26px] font-semibold">{postTitle}</h3>
+                </a>
+                <div class="post-card-right-date-and-author flex w-full justify-between">
+                    <div class="author flex items-center gap-2">
+                        <div class="author-image size-6 rounded-full">
+                            <img src={postAuthorImage} alt={postAuthor} class="size-none w-full h-full object-cover select-none" draggable="false" />
+                        </div>
+                        <span class="select-none dark:text-neutral-500">{postAuthor}</span>
+                    </div>
+                    <div class="date">
+                        <span class="select-none dark:text-neutral-500">
+                            {postDate}
+                        </span>
+                    </div>
+                </div>
+                <div class="post-card-right-description text-neutral-400">
+                    <p>{postDescription}</p>
+                </div>
+            </div>
+        </div>
+    </div>
