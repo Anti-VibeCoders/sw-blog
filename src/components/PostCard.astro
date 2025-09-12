@@ -6,7 +6,7 @@ const { postUrl, postImage, postTitle, postAuthor, postAuthorImage, postDate, po
         <div class="post-card-left max-w-1/2">
             <a href={postUrl}>
                 <div class="post-image w-full">
-                    <img src={postImage} alt={postTitle} loading="lazy" class="w-full h-full object-cover rounded-md select-none" draggable="false" />
+                    <img src={postImage || '/postPlaceholder.webp'} alt={postTitle} loading="lazy" class="w-full h-full object-cover rounded-md select-none" draggable="false" />
                 </div>
             </a>
         </div>

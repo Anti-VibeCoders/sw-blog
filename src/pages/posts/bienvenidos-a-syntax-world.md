@@ -6,7 +6,7 @@ author: 'Isaac Alvarez'
 publicationDate: 'Jul 16, 2025'
 readingMinutes: 3
 authorImage: '/placeholder.png'
-imagePreview: 'https://framerusercontent.com/images/qYr64JnjRXljHNTR6xYPliPbXS4.png?scale-down-to=520'
+imagePreview: '/postPlaceholder.webp'
 ---
 
 # ¡Bienvenidos a Syntax World!
@@ -17,7 +17,7 @@ imagePreview: 'https://framerusercontent.com/images/qYr64JnjRXljHNTR6xYPliPbXS4.
 
 Somos **Syntax World**, un grupo de desarrolladores de software expertos y apasionados por lo que hacemos. A lo largo de los años, hemos acumulado una gran cantidad de experiencias, tanto éxitos como fracasos, y hemos aprendido lecciones valiosas en el campo de batalla del desarrollo de software. Creemos firmemente que el conocimiento compartido es la clave para el crecimiento de toda la comunidad.
 
-![image](https://framerusercontent.com/images/qYr64JnjRXljHNTR6xYPliPbXS4.png?scale-down-to=624)
+![image](../../../public/postPlaceholder.webp)
 
 ## ¿Qué encontrarás en este blog?
 
