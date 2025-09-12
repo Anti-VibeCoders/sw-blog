@@ -3,28 +3,7 @@ import Github from '@icons/github.svg'
 import Linkedin from '@icons/linkedin.svg'
 import X from '@icons/x.svg' 
 import BaseLayout from "@layouts/BaseLayout.astro";
-import emailjs from "@emailjs/browser"
 
-emailjs.init("46EUndvdqXr8Qw5xt")
-
-function handleSubmit(e: any) {
-  e.preventDefult()
-
-  try {
-    emailjs.send(
-        "service_cuei0zl",
-        "template_ydnttub",
-        e.target,
-        "46EUndvdqXr8Qw5xt"
-    )
-  
-    alert("✅ Mensaje enviado con éxito!");
-    e.target.reset();
-  } catch (error) {
-    console.error("❌ Error al enviar:", error);
-    alert("Ocurrió un error, inténtalo de nuevo.");
-  }
-}
 ---
 <BaseLayout>
   <div class="w-full mb-12">
@@ -56,14 +35,14 @@ function handleSubmit(e: any) {
         <hr/>
 
         <div class="bg-gray-200 dark:bg-gray-800/50 rounded-2xl max-sm:p-6 p-10 w-full shadow-lg mt-8">
-          <form onsubmit="{handleSubmit}" method="POST" class="flex flex-col gap-6">
+          <form id="contact-form" class="flex flex-col gap-6">
             <div class="flex flex-col w-full">
               <label for="name" class="text-sm mb-2 font-semibold">Nombre</label>
-              <input type="text" id="name" name="nombre" placeholder="e.g. John" required class="bg-transparent border border-gray-700 p-3 rounded-lg text-base outline-none focus:border-purple-600 transition-colors placeholder:text-neutral-600" />
+              <input type="text" id="name" name="name" placeholder="e.g. John" required class="bg-transparent border border-gray-700 p-3 rounded-lg text-base outline-none focus:border-purple-600 transition-colors placeholder:text-neutral-600" />
             </div>
             <div class="flex flex-col">
               <label for="email" class="text-sm mb-2 font-semibold">Correo</label>
-              <input type="email" id="email" name="correo" placeholder="jane@framer.com" required class="bg-transparent border border-gray-700 p-3 rounded-lg text-base outline-none focus:border-purple-600 transition-colors placeholder:text-neutral-600" />
+              <input type="email" id="email" name="email" placeholder="jane@framer.com" required class="bg-transparent border border-gray-700 p-3 rounded-lg text-base outline-none focus:border-purple-600 transition-colors placeholder:text-neutral-600" />
             </div>
             <div class="flex flex-col gap-2">
               <label for="subject" class="text-sm font-mediummb-2 font-semibold">Tema</label>
@@ -79,4 +58,30 @@ function handleSubmit(e: any) {
       </div>
     </section>
   </div>
+<script>
+  import emailjs from "@emailjs/browser";
+
+  emailjs.init("46EUndvdqXr8Qw5xt");
+
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    try {
+      await emailjs.sendForm(
+        "service_cuei0zl",
+        "template_n2vhbj7",
+        form,
+        "46EUndvdqXr8Qw5xt"
+      );
+
+      alert("✅ Mensaje enviado con éxito!");
+      form.reset();
+    } catch (error) {
+      console.error("❌ Error al enviar:", error);
+      alert("Ocurrió un error, inténtalo de nuevo.");
+    }
+  });
+</script>
 </BaseLayout>
