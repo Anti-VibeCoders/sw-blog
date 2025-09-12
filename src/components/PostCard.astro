@@ -13,12 +13,12 @@ const { postUrl, postImage, postTitle, postAuthor, postAuthorImage, postDate, po
         <div class="post-card-right w-full h-full">
             <div class="post-card-right-info h-full w-full flex flex-col justify-center gap-6 items-start">
                 <a href={postUrl}>
-                    <h3 class="text-2xl font-semibold">{postTitle}</h3>
+                    <h3 class="text-[26px] font-semibold">{postTitle}</h3>
                 </a>
                 <div class="post-card-right-date-and-author flex w-full justify-between">
                     <div class="author flex items-center gap-2">
                         <div class="author-image size-6 rounded-full">
-                            <img src={postAuthorImage} alt={postAuthor} class="size-none w-full h-full object-cover" draggable="false" />
+                            <img src={postAuthorImage} alt={postAuthor} class="size-none w-full h-full object-cover select-none" draggable="false" />
                         </div>
                         <span class="select-none dark:text-neutral-500">{postAuthor}</span>
                     </div>
@@ -28,7 +28,7 @@ const { postUrl, postImage, postTitle, postAuthor, postAuthorImage, postDate, po
                         </span>
                     </div>
                 </div>
-                <div class="post-card-right-description">
+                <div class="post-card-right-description text-neutral-400">
                     <p>{postDescription}</p>
                 </div>
             </div>
