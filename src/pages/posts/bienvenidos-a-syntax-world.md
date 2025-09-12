@@ -1,5 +1,5 @@
 ---
-layout: ../../layout/PostsLayout.astro
+layout: ../../layouts/PostsLayout.astro
 title: '¡Bienvenidos a Syntax World!'
 description: '¡Estamos increíblemente emocionados de lanzar nuestro blog! Si has llegado hasta aquí, es porque compartes nuestra misma pasión por el desarrollo de software, la tecnología y el crecimiento profesional constante.'
 author: 'Isaac Alvarez'
