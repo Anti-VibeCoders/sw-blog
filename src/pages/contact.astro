@@ -3,6 +3,7 @@ import Github from '@icons/github.svg'
 import Linkedin from '@icons/linkedin.svg'
 import X from '@icons/x.svg' 
 import BaseLayout from "@layouts/BaseLayout.astro";
+
 ---
 <BaseLayout>
   <div class="w-full mb-12">
@@ -10,14 +11,14 @@ import BaseLayout from "@layouts/BaseLayout.astro";
       <div class="size-32 max-sm:size-28 bg-gray-700 rounded-full flex items-center justify-center mb-6">
         <img src="https://framerusercontent.com/images/thnzrLx2TUE9WA02fFmmDzc.png?scale-down-to=512" alt="Contact Icon" class="w-full h-full rounded-full object-cover" />
       </div>
-      <h1 class="text-2xl font-semibold">Contact</h1>
+      <h1 class="text-2xl font-semibold">Contacto</h1>
     </section>
 
     <section class="flex flex-col items-center p-4">
       <div>
         <div class="text-left max-w-xl mx-auto mb-8">
-          <h3 class="text-3xl font-bold mb-2">Let's Talk</h3>
-          <p class="text-[#282828] dark:text-[#d1d5db]">If you require assistance or have any inquiries, please do not hesitate to reach out to us. Your questions are important to us, and our team is ready to assist you in any way possible.</p>
+          <h3 class="text-3xl font-bold mb-2">Comunicate con nosotos</h3>
+          <p class="text-[#282828] dark:text-[#d1d5db]">Si necesita ayuda o realiza alguna consulta, no dude en comunicarse con nosotros. Sus preguntas son importantes para nosotros y nuestro equipo está listo para ayudarlo de cualquier manera posible.</p>
           <div class="flex gap-4 mt-6">
             <a href="https://github.com/Anti-VibeCoders" target="_blank">
             <Github />
@@ -34,22 +35,22 @@ import BaseLayout from "@layouts/BaseLayout.astro";
         <hr/>
 
         <div class="bg-gray-200 dark:bg-gray-800/50 rounded-2xl max-sm:p-6 p-10 w-full shadow-lg mt-8">
-          <form action="https://formspree.io/f/mpwjbdvk" method="POST" class="flex flex-col gap-6">
+          <form id="contact-form" class="flex flex-col gap-6">
             <div class="flex flex-col w-full">
-              <label for="name" class="text-sm mb-2 font-semibold">Name</label>
+              <label for="name" class="text-sm mb-2 font-semibold">Nombre</label>
               <input type="text" id="name" name="name" placeholder="e.g. John" required class="bg-transparent border border-gray-700 p-3 rounded-lg text-base outline-none focus:border-purple-600 transition-colors placeholder:text-neutral-600" />
             </div>
             <div class="flex flex-col">
-              <label for="email" class="text-sm mb-2 font-semibold">Email</label>
+              <label for="email" class="text-sm mb-2 font-semibold">Correo</label>
               <input type="email" id="email" name="email" placeholder="jane@framer.com" required class="bg-transparent border border-gray-700 p-3 rounded-lg text-base outline-none focus:border-purple-600 transition-colors placeholder:text-neutral-600" />
             </div>
             <div class="flex flex-col gap-2">
-              <label for="subject" class="text-sm font-mediummb-2 font-semibold">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Subject" required class="bg-transparent border border-gray-700 p-3 rounded-lg text-base outline-none focus:border-purple-600 transition-colors placeholder:text-neutral-600" />
+              <label for="subject" class="text-sm font-mediummb-2 font-semibold">Tema</label>
+              <input type="text" id="subject" name="subject" placeholder="Tema" required class="bg-transparent border border-gray-700 p-3 rounded-lg text-base outline-none focus:border-purple-600 transition-colors placeholder:text-neutral-600" />
             </div>
             <div class="flex flex-col">
-              <label for="message" class="text-sm mb-2 font-semibold">Your Message</label>
-              <textarea id="message" name="message" placeholder="Your Message" required class="bg-transparent border border-gray-700 p-3 rounded-lg text-base outline-none h-[120px] resize-y focus:border-purple-600 transition-colors placeholder:text-neutral-600"></textarea>
+              <label for="message" class="text-sm mb-2 font-semibold">Mensaje</label>
+              <textarea id="message" name="message" placeholder="Tu Mensaje" required class="bg-transparent border border-gray-700 p-3 rounded-lg text-base outline-none h-[120px] resize-y focus:border-purple-600 transition-colors placeholder:text-neutral-600"></textarea>
             </div>
             <button type="submit" class="max-md:col-span-1 col-span-2 bg-purple-600 text-white font-bold py-3 rounded-lg cursor-pointer hover:bg-purple-700 transition-colors">Submit</button>
           </form>
@@ -57,4 +58,30 @@ import BaseLayout from "@layouts/BaseLayout.astro";
       </div>
     </section>
   </div>
+<script>
+  import emailjs from "@emailjs/browser";
+
+  emailjs.init("46EUndvdqXr8Qw5xt");
+
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    try {
+      await emailjs.sendForm(
+        "service_cuei0zl",
+        "template_n2vhbj7",
+        form,
+        "46EUndvdqXr8Qw5xt"
+      );
+
+      alert("✅ Mensaje enviado con éxito!");
+      form.reset();
+    } catch (error) {
+      console.error("❌ Error al enviar:", error);
+      alert("Ocurrió un error, inténtalo de nuevo.");
+    }
+  });
+</script>
 </BaseLayout>
