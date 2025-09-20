@@ -16,7 +16,7 @@
     --color-background: #ffffff;
     --color-code-bg: #f3f4f6; 
     --color-code-text: #1f2937; 
-    --color-quote-border: #e5e7eb; 
+    --color-quote-border: linear-gradient(to right, #CA8AFF, #8AC0FF); 
     --color-quote-bg: #f9fafb;
     --color-quote-text: #4b5563;
 }
@@ -30,7 +30,7 @@
     --color-background: #111827;
     --color-code-bg: #1f2937;
     --color-code-text: #e5e7eb;
-    --color-quote-border: #374151;
+    --color-quote-border: linear-gradient(to right, #AD46FFBF, #51A2FFBF);
     --color-quote-bg: #1f2937;
     --color-quote-text: #9ca3af;
 }
